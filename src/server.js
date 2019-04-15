@@ -40,6 +40,8 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.use(require("./routes")); // Cria uma rota da raiz './' para o arquivo "routes.js" Obs: se retirar o caminho relativo './' esta função achará que é para importar algum módulo do arquivo "routes".
 
-app.listen(3333);
+// app.listen(3333); // Porta que a aplicaçao irá usar
+app.listen(process.env.PORT || 3333); // process.env.PORT é uma variável ambiente, utilizada para ser editavel dependendo do ambiente que está sendo executada, aqui vamos usar esta variavel OU 3333, se não estiver sendo utilizada será utilizado 3333. O Heroku utilizara esta porta.
+//process (?) env (Variaveis ambiente) PORT (nome da variável, que é definida automaticamente pelo heroku)
 
 
