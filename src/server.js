@@ -23,7 +23,7 @@ io.on("connection", socket => { // com a variavel io, poderemos usar websocket. 
     })
 });
 
-app.use((req, res) => {
+app.use((req, res, next) => {
     req.io = io; // Aqui está pegando a conexão io para dentro da aplicação (seu estado também). (Veja esta variavel sendo usada em FileController)
     return next(); // Aqui quando se usa um return, a aplicação retorna uma informação para o usuário e para. Com o next(), a aplicação continua rodando.
 });

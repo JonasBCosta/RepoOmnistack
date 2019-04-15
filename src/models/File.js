@@ -16,7 +16,7 @@ const File = new mongoose.Schema({
 
 });
 
-File.virtual('url').get(function(){ // Vai criar um caminho virtual para o arquivo, porque somente com o id e o nome do arquivo não é possível acessá-lo diretamente. O caminho virtual não existirá no banco de dados, somente no back-end da aplicação
+File.virtual("url").get(function(){ // Vai criar um caminho virtual para o arquivo, porque somente com o id e o nome do arquivo não é possível acessá-lo diretamente. O caminho virtual não existirá no banco de dados, somente no back-end da aplicação
 //Deve ser acessado neste formato de função pois com arrow functions não é possível acessar o "this" para acessar a instancia desta classe
     const url = process.env.URL || 'http://localhost:3333';
 
